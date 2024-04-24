@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anta&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/style.css">
+  </head>
+  <body>
+
+    <div id="login-signup-container" class="container-fluid position-absolute d-none" style="height: 100vh; z-index: 100;">
+        <div id="login-signup-container-inner" class="row login-signup h-75 bg-dark border border-1 border-light position-absolute top-50 start-50 translate-middle py-4 px-3 rounded" onclick="event.stopPropagation()">
+          <h1 class="login-signup-header text-center text-main mb-4 mt-5">Login</h1>
+          <form id="login-signup-form" action="" class="col-12 login-signup-form d-flex flex-column align-items-center justify-content-center">
+            <div class="form-floating col-9 mb-4">
+              <input type="email" class="form-control" id="email-form-input" placeholder="name@example.com">
+              <label for="floatingInput" id="email-form-input-label">Email address</label>
+            </div>
+            <div class="form-floating col-9">
+              <input type="password" class="form-control" id="password-form-input" placeholder="Password">
+              <label for="floatingPassword" id="password-form-input-label">Password</label>
+            </div>
+            <div class="submitBtn col-7 mt-4">
+              <button type="submit" class="btn btn-dark col-12 border border-secondary" id="login-submit-btn">Submit</button>
+            </div>
+          </form>
+          <div class="instructions mt-4">
+            <p class="text-danger m-0 mb-2">&#42; Enter a valid Email address</p>
+            <p class="text-danger m-0">&#42; Your password has to be more than 8 characters</p>
+          </div>
+        </div>
+    </div>
+
+    <div class="container header mb-3">
+      <header class="row border-bottom py-3">
+        <div class="row justify-content-between align-items-center m-0">
+          <div class="col-4">
+            <a class="link-secondary" href="#">Subscribe</a>
+          </div>
+          <div class="col-4 d-flex align-items-center justify-content-center">
+            <form action="" class="search-content">
+              <input type="text" name="" id="" placeholder="Search ..." class="search-bar-input">
+              <button type="submit" class="search-button">
+                <span class="material-symbols-outlined search-icon">
+                  search
+                </span>
+              </button>
+            </form>
+          </div>
+          
+          <div class="col-3 d-flex justify-content-end align-items-center">
+            <button type="button" class="btn dark-btn " id="light-dark-btn">
+              <!-- <img class="dark-mode-icon" src="images/icons8-moon-30.png" alt="dark-mode"> -->
+              <img class="dark-mode-icon" src="https://img.icons8.com/ios-glyphs/30/moon-symbol.png" alt="moon-symbol"/>
+              <svg class="light-mode-icon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="90%" height="90%" viewBox="0,0,256,256">
+                <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(8,8)"><path d="M31,15h-5c-0.019,0 -0.035,0.01 -0.054,0.011c-0.188,-1.913 -0.925,-3.781 -2.21,-5.347c0.013,-0.012 0.03,-0.016 0.043,-0.028l3.534,-3.536c0.391,-0.391 0.391,-1.023 0,-1.414c-0.391,-0.391 -1.023,-0.391 -1.414,0l-3.535,3.536c-0.014,0.014 -0.018,0.032 -0.031,0.047c-1.534,-1.259 -3.387,-2.02 -5.345,-2.212c0.002,-0.02 0.012,-0.037 0.012,-0.057v-5c0,-0.553 -0.447,-1 -1,-1c-0.553,0 -1,0.447 -1,1v5c0,0.019 0.01,0.034 0.011,0.052c-0.022,0.002 -0.044,0.001 -0.066,0.003c-0.549,0.058 -0.947,0.55 -0.889,1.1c0.046,0.438 0.365,0.764 0.775,0.857c-0.005,0.014 -0.01,0.026 -0.015,0.041c0.074,-0.01 0.15,-0.012 0.225,-0.02c0.039,0.001 0.074,0.015 0.115,0.011c0.457,-0.049 0.911,-0.046 1.362,-0.017c0.751,0.129 1.3,0.801 1.246,1.578c-0.052,0.76 -0.662,1.345 -1.396,1.397c-1.542,0.171 -3.002,0.864 -4.07,1.958c-3.744,3.935 -0.569,10.113 4.452,11.001c-2.291,0.214 -4.657,-0.553 -6.407,-2.304c-3.119,-3.119 -3.119,-8.194 0,-11.313c0.593,-0.593 1.267,-1.085 2.002,-1.462c0.491,-0.252 0.686,-0.854 0.434,-1.346c-0.251,-0.492 -0.856,-0.688 -1.346,-0.434c-0.629,0.322 -1.205,0.734 -1.754,1.185c-0.017,-0.02 -0.024,-0.045 -0.043,-0.065l-3.535,-3.536c-0.391,-0.391 -1.023,-0.391 -1.414,0c-0.391,0.391 -0.391,1.023 0,1.414l3.535,3.536c0.013,0.013 0.029,0.016 0.043,0.028c-1.285,1.566 -2.022,3.434 -2.21,5.347c-0.02,-0.001 -0.036,-0.011 -0.055,-0.011h-5c-0.553,0 -1,0.447 -1,1c0,0.553 0.447,1 1,1h5c0.019,0 0.035,-0.01 0.054,-0.011c0.189,1.912 0.925,3.78 2.21,5.346c-0.013,0.012 -0.03,0.016 -0.043,0.028l-3.534,3.537c-0.391,0.391 -0.391,1.023 0,1.414c0.195,0.195 0.451,0.293 0.707,0.293c0.256,0 0.512,-0.098 0.707,-0.293l3.535,-3.536c0.013,-0.013 0.017,-0.03 0.028,-0.043c1.566,1.285 3.434,2.022 5.347,2.21c-0.001,0.02 -0.011,0.036 -0.011,0.055v5c0,0.553 0.447,1 1,1c0.553,0 1,-0.447 1,-1v-5c0,-0.019 -0.01,-0.036 -0.011,-0.055c1.913,-0.189 3.781,-0.926 5.347,-2.21c0.012,0.013 0.016,0.03 0.028,0.043l3.535,3.536c0.195,0.195 0.451,0.293 0.707,0.293c0.256,0 0.512,-0.098 0.707,-0.293c0.391,-0.391 0.391,-1.023 0,-1.414l-3.535,-3.536c-0.013,-0.013 -0.029,-0.016 -0.043,-0.028c1.285,-1.566 2.021,-3.433 2.21,-5.346c0.02,0 0.036,0.01 0.055,0.01h5c0.553,0 1,-0.447 1,-1c0,-0.553 -0.447,-1 -1,-1z"></path></g></g>
+                </svg>
+            </button>
+          </div>
+          <div class="col-1 d-flex justify-content-end align-items-center">
+            <button type="button" class="btn btn-sm btn-outline-secondary" id="signup-btn">Login</button>
+          </div>
+        </div>
+      </header>
+      <nav
+        class="row p-2 border-bottom d-flex justify-content-between flex-nowrap"
+      >
+        <a
+          class="nav-link text-decoration-none col-1 fw-bold p-0 text-center"
+          href="#"
+          >World</a
+        >
+        <a
+          class="nav-link text-decoration-none col-1 p-0 text-center"
+          href="#"
+          >U.S.</a
+        >
+        <a
+          class="nav-link text-decoration-none col-1 p-0 text-center"
+          href="#"
+          >Technology</a
+        >
+        <a
+          class="nav-link text-decoration-none col-1 p-0 text-center"
+          href="#"
+          >Design</a
+        >
+        <a
+          class="nav-link text-decoration-none col-1 p-0 text-center"
+          href="#"
+          >Culture</a
+        >
+        <a
+          class="nav-link text-decoration-none col-1 p-0 text-center"
+          href="#"
+          >Business</a
+        >
+        <a
+          class="nav-link text-decoration-none col-1 p-0 text-center"
+          href="#"
+          >Politics</a
+        >
+        <a
+          class="nav-link text-decoration-none col-1 p-0 text-center"
+          href="#"
+          >Opinion</a
+        >
+        <a
+          class="nav-link text-decoration-none col-1 p-0 text-center"
+          href="#"
+          >Science</a
+        >
+        <a
+          class="nav-link text-decoration-none col-1 p-0 text-center"
+          href="#"
+          >Health</a
+        >
+        <a
+          class="nav-link text-decoration-none col-1 p-0 text-center"
+          href="#"
+          >Style</a
+        >
+        <a
+          class="nav-link text-decoration-none col-1 p-0 text-center"
+          href="#"
+          >Travel</a
+        >
+      </nav>
+    </div>
+
+
+
+    <main class="container mb-4">
+      <div class="row col-12 round mb-4">
+        <div class="card header-card bg-dark text-white p-0">
+          <img class="card-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzVHpf_6lTw9widP6-D5MHs5Zk1u-qcQ4nPg&usqp=CAU" alt="Card image" />
+          <div class="card-img-overlay ps-5 pt-5">
+            <p class="col-7 display-4 text-dark h1 fw-bolder fst-italic">
+              Your roadmap of how to learn HTML!
+            </p>
+            <p class="card-text col-7 fs-5  d-none d-md-block text-dark">
+              The most efficient roadmaps to take for beginners to start learning front-End web development!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row cards mb-2">
+        <div class="col-12 col-lg-6 ps-0">
+          <div class="card mb-3" style="max-width: 540px">
+            <div class="row g-0">
+              <div class="col-md-8">
+                <div class="card-body">
+                  <p class="card-title text-purple fw-bold">Css</p>
+                  <h2 class="card-text fw-bold m-0 mb-2">Your CSS roadmap!</h2>
+                  
+                  <p class="card-text fs-6">If you have fully learned HTML and want to make your web pages look a lot better... This is the course for you!</p>
+                  <a class="fs-6" href="#">Continue reading <span class="material-symbols-outlined" style="font-size: 1rem; font-weight: 200;">
+                    arrow_forward_ios
+                    </span></a>
+                </div>
+              </div>
+
+              <div class="col-md-4 d-none d-lg-block">
+                <img src="data:image/png;base64,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" class="img-fluid rounded-end h-100" alt="..." />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-6 ps-0">
+          <div class="card mb-3" style="max-width: 540px">
+            <div class="row g-0">
+              <div class="col-md-8">
+                <div class="card-body">
+                  <p class="card-title text-purple fw-bold">Java script</p>
+                  <h4 class="card-text fw-bold m-0 mt-3 mb-2">Your JavaScript roadmap!</h4>
+                  <p class="card-text">If you have fully learned HTML and CSS and are comfortable writing them... Lets make your websites interactable!</p>
+                  <a class="fs-6" href="#">Continue reading <span class="material-symbols-outlined" style="font-size: 1rem; font-weight: 200;">
+                    arrow_forward_ios
+                    </span></a>
+                </div>
+              </div>
+
+              <div class="col-md-4 d-none d-lg-block">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQORDfjID0nez9E05CvCSdYyP7QyMIAxc4WpA&usqp=CAU" class="img-fluid rounded-end h-100" alt="..." />
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="row main-content g-5">
+        <hr>
+
+        <div class="col-12 col-lg-8">
+          <article data-aos="fade-right" class="blog-post mb-5 main-article">
+            
+            <h1 class="fw-bold display-4 m-0 mb-3">HTML:</h1>
+
+            <p>HTML <i class="fw-bold"> (Hypertext Markup Language) </i> is the standard markup language for Web pages.</p>
+            <p class="mb-5">With HTML you can create your own Websites!</p>
+            <hr>
+
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="main-roadmap" data-bs-toggle="tab" data-bs-target="#main-roadmap-pane" type="button" role="tab" aria-controls="main-roadmap-pane" aria-selected="true">Main Roadmap</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="basic-tags" data-bs-toggle="tab" data-bs-target="#basic-tags-pane" type="button" role="tab" aria-controls="basic-tags-pane" aria-selected="false">Basic tags</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="attribute" data-bs-toggle="tab" data-bs-target="#attribute-pane" type="button" role="tab" aria-controls="attribute-pane" aria-selected="false">HTML attributes</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="lists" data-bs-toggle="tab" data-bs-target="#lists-pane" type="button" role="tab" aria-controls="lists-pane" aria-selected="false">lists</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="tables" data-bs-toggle="tab" data-bs-target="#tables-pane" type="button" role="tab" aria-controls="tables-pane" aria-selected="false"> table</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="forms" data-bs-toggle="tab" data-bs-target="#forms-pane" type="button" role="tab" aria-controls="forms-pane" aria-selected="false">forms</button>
+              </li>
+            </ul>
+            <div class="row">
+              <div class="tab-content" id="myTabContent">
+              
+              <!--                                  TAB 1                                         -->
+
+              <div class="tab-pane fade show active mt-3" id="main-roadmap-pane" role="tabpanel" aria-labelledby="main-roadmap" tabindex="0">
+                <div class="row chapters-list ps-5">
+                  <ol>
+                    <li>
+                      <p class="ms-2">At first in this road map we are going to go over some HTML basics. For example how to set up your editor and files, layouts, and more.</p>
+                    </li>
+                    
+                    <li>
+                      <p class="ms-2">In this stage we will go over some simple tags in HTML. For example paragraphs, headings, images and more</p>
+                    </li>
+                    
+                    <li>
+                      <p class="ms-2">At this point you will be able to make a simple static website, and after that we will go over different html attributes.</p>
+                    </li>
+                    
+                    <li>
+                      <p class="ms-2">And at this and the out last part of this road map you will learn some more advanced tags and things like lists, tables and more.</p>
+                    </li>
+                    
+                    <li>
+                      <p class="ms-2"><strong>Congratulation you now know HTML! (Check out our <a href="#">CSS</a> tutorial to make your websites look better!)</strong></p>
+                    </li>
+                  </ol>
+                </div>
+
+                <div class="row basics-og-html">
+                  <div class="row introduction ps-2 mt-5">
+                    <h2 class="fw-bold">Introduction</h2>
+                    <p>
+                      <strong>HTML</strong> stands for <strong>HyperText Markup Language</strong>. It is the standard markup language used to create web pages. HTML is a combination of Hypertext and Markup language. Hypertext defines the link between web pages. A markup language is used to define the text document within the tag to define the structure of web pages.
+                    </p>
+                    <p>This language is used to annotate (make notes for the computer) text so that a machine can understand it and manipulate text accordingly. Most markup languages (e.g. HTML) are human-readable. The language uses tags to define what manipulation has to be done on the text.</p>
+                  </div>
+
+                  <div class="row what-is-html">
+                    <h2 class="fw-bold">What is HTML?</h2>
+                    <p>HTML stands for HyperText Markup Language and it is used to create webpages. It uses HTML <strong>tags</strong> and <strong>attributes</strong> to describe the structure and formatting of a web page.</p>
+
+                    <p>HTML consists of various elements, that are responsible for telling search engines how to display page content. For example, headings, lists, images, links, and more.</p>
+                  </div>
+
+                  <div class="row features-of-html">
+                    <h2 class="fw-bold">HTML is:</h2>
+                    <ul class="ms-4">
+                      <li><p>Easy to learn and easy to use.</p></li>
+                      <li><p>Platform-independent.</p></li>
+                      <li><p>Markup language.</p></li>
+                    </ul>
+                  </div>
+
+                  <div class="row elements-tags">
+                    <h2 class="fw-bold">HTML Elements and Tags</h2>
+                    <p>HTML uses predefined tags and elements that tell the browser how to display the content. <br> HTML elements include an opening tag, some content, and a closing tag.</p>
+                    <h4>Example:</h5>
+                    <h6 class="ms-3 my-4">
+                      <code class="bg-black rounded p-2">&#60;h1&#62; Hello world &#60;/h1&#62;</code>
+                    </h6>
+                    <p>Remember to include closing tags. If omitted, the browser applies the effect of the opening tag until the end of the page.</p>
+                    <div class="ms-3 mb-3">
+                      <code class="bg-black rounded p-2">&#60;opening-tag&#62; ... &#60;/closing-tag&#62;</code>
+                    </div>
+                  </div>
+
+                  <div class="row page-structure mt-3">
+                    <h2 class="fw-bold">HTML page structure</h2>
+                    <p>The basic structure of an HTML page is shown below. It contains the essential building-block elements (That is doctype declaration, HTML, head, title, and body elements) upon which all web pages are created.</p>
+                    <div class="ms-3 mb-3 py-2 bg-black rounded col-11">
+                      <code class="">
+                        &#60;!DOCTYPE html&#62;<br>
+                        &#60;html lang="en"&#62;<br>
+                        &nbsp; &#60;head&#62;<br>
+                        &nbsp;&nbsp;&nbsp; &#60;meta charset="UTF-8"&#62;<br>
+                        &nbsp;&nbsp;&nbsp; &#60;meta name="viewport" content="width=device-width, initial-scale=1.0"&#62;<br>
+                        &nbsp;&nbsp;&nbsp; &#60;title&#62;Document&#60;/title&#62;<br>
+                        &nbsp; &#60;/head&#62;<br>
+                        &nbsp; &#60;body&#62;<br>
+                        &nbsp;&nbsp;&nbsp; &#60;h1&#62; Hello World! &#60;/h1&#62;<br>
+                        &nbsp; &#60;/body&#62;<br>
+                        &#60;/html&#62;<br>
+                      </code>
+                    </div>
+                    
+                    <ul class="ps-5">
+                      <li class="mb-3">
+                        <h6 class="text-main d-inline">&#60;!DOCTYPE html&#62;</h6>
+                        <p class="d-inline">– This is called the HTML root element. All other elements are contained within it.</p>
+                      </li>
+                      <li class="mb-3">
+                        <h6 class="text-main d-inline">&#60;html&#62;</h6>
+                        <p class="d-inline">– This is called the HTML root element. All other elements are contained within it.</p>
+                      </li>
+                      <li class="mb-3">
+                        <h6 class="text-main d-inline">&#60;head&#62;</h6>
+                        <p class="d-inline">– The head tag contains the “behind the scenes” elements for a webpage. Elements within the head aren’t visible on the front end of a webpage. HTML elements </p>
+                      </li>
+                      <li class="mb-3">
+                        <h6 class="text-main d-inline">&#60;style&#62;</h6>
+                        <p class="d-inline">– This HTML tag allows us to insert styling into our web pages and make them appealing to look at with the help of CSS.</p>
+                      </li>
+                      <li class="mb-3">
+                        <h6 class="text-main d-inline">&#60;title&#62;</h6>
+                        <p class="d-inline">– The title is what is displayed on the top of your browser when you visit a website and contains the title of the webpage that you are viewing.</p>
+                      </li>
+                      <li class="mb-3">
+                        <h6 class="text-main d-inline">&#60;script&#62;</h6>
+                        <p class="d-inline">– This tag is used to add functionality to the website with the help of JavaScript.</p>
+                      </li>
+
+                      <li class="mb-3">
+                        <h6 class="text-main d-inline">&#60;meta&#62;</h6>
+                        <p class="d-inline">– This tag encloses the metadata of the website that must be loaded every time the website is visited. For eg:- the metadata charset allows you to use the standard UTF-8 encoding on your website. This in turn allows the users to view your webpage in the language of their choice. It is a self-closing tag.</p>
+                      </li>
+                      <li class="mb-3">
+                        <h6 class="text-main d-inline">&#60;link&#62;</h6>
+                        <p class="d-inline">– The ‘link’ tag is used to tie together HTML, CSS, and JavaScript. It is self-closing.</p>
+                      </li>
+                      <li>
+                        <h6 class="text-main d-inline">&#60;body&#62;</h6>
+                        <p class="d-inline">– The body tag is used to enclose all the visible content of a webpage. In other words, the body content is what the browser will show on the front end.</p>
+                      </li>
+                    </ul>
+
+                  </div>
+                </div>
+              </div>
+
+<!--                                  TAB 1 END                                     -->
+
+<!--                                  TAB 2                                         -->
+
+
+              <div class="tab-pane fade mt-3" id="basic-tags-pane" role="tabpanel" aria-labelledby="basic-tags" tabindex="0">
+                <div class="row header-tag">
+                  <h1 class="fw-bold">Header tags</h1>
+                  <p><strong>HTML</strong> heading tags play an essential role. They not only organize information but also impact search engine rankings. In this article, we’ll learn about the significance of heading tags, their hierarchy, and best practices for optimizing them. The HTML heading tag is used to define the headings of a page.</p>
+                  <p>HTML provides six levels of heading elements, ranging from &#60;h1&#62; (highest level) to &#60;h6&#62; (lowest level).</p>
+                  <div class="heading-usage ms-2">
+                    <h4 class="fw-bold">Usage of different Heading Tags:</h4>
+
+                    <ol class="ms-2 mt-3">
+                      <li class="mt-4">
+                        <h5 class="text-main">&#60;h1&#62; – Main Heading (Largest):</h5>
+                        <ul class="mt-2">
+                          <li>
+                            Represents the primary topic of the page.
+                          </li>
+                          <li>
+                            Use it sparingly to maintain clarity.
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li class="mt-4">
+                        <h5 class="text-main">&#60;h2&#62; – Subheadings:</h5>
+                        <ul class="mt-2">
+                          <li>
+                            Ideal for dividing content into sections.
+                          </li>
+                          <li>
+                            If further subsections exist, employ &#60;h3&#62; elements.
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li class="mt-4">
+                        <h5 class="text-main">&#60;h3&#62; to &#60;h6&#62; – Smaller Headings:</h5>
+                        <ul class="mt-2">
+                          <li>
+                            Gradually decrease in size.
+                          </li>
+                          <li>
+                            Use them for finer subdivisions.
+                          </li>
+                        </ul>
+                      </li>
+                    </ol>
+                  </div>
+                  <div class="header-example-code mt-3 ms-2" >
+                    <h4 class="fw-bold mb-3">Example code:</h4>
+                    <div class="ms-5 py-2 ps-4 bg-black rounded col-7 header-example-code">
+                      <code>
+                        &#60;!DOCTYPE html&#62; <br>
+                        &#60;html&#62; <br>
+                        &nbsp;&nbsp; &#60;body&#62; <br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &#60;h1&#62; <p class="text-light d-inline"> This is heading h1 </p> &#60;/h1&#62; <br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &#60;h2&#62; <p class="text-light d-inline"> This is heading h2 </p>&#60;/h2&#62; <br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &#60;h3&#62; <p class="text-light d-inline"> This is heading h3 </p> &#60;/h3&#62; <br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &#60;h4&#62; <p class="text-light d-inline"> This is heading h4 </p> &#60;/h4&#62; <br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &#60;h5&#62; <p class="text-light d-inline"> This is heading h5 </p> &#60;/h5&#62; <br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &#60;h6&#62; <p class="text-light d-inline"> This is heading h6 </p> &#60;/h6&#62; <br>
+                        &nbsp;&nbsp; &#60;/body&#62; <br>
+                        &#60;/html&#62; <br>
+                      </code>
+                    </div>
+                  </div>
+                </div>
+
+                <hr>
+
+                <div class="row paragraph-tag">
+                  <h1 class="fw-bold">Paragraph tags</h1>
+                  <p>The <strong>&#60;p&#62;</strong> tag in HTML defines a paragraph. These have both opening and closing tags. So anything mentioned within <strong>&#60;p&#62;</strong> and <strong>&#60;/p&#62;</strong> is treated as a paragraph. A paragraph is a block-level element so a new paragraph always begins on a new line, and browsers naturally put some space before and after a paragraph to make it look neat and easy to read.</p>
+                  <div class="paragraph-tag-example ms-2 mb-4">
+                    <h4>Example:</h4>
+                    <code class="bg-black py-2 px-3 rounded ms-2 mt-2">&#60;p&#62;Text&#60;/p&#62;</code>
+                  </div>
+                  <div class="paragraph-properties ms-2">
+                    <h3 class="fw-bold"> Properties of the paragraph tag</h4>
+                    <ul class="mt-2">
+                      <li class="mb-3">As already mentioned, the &#60;p&#62; tag automatically adds space before and after any paragraph, which is basically margins added by the browser. </li>
+                      <li class="mb-3">If a user adds multiple spaces, the browser reduces them to a single space.</li>
+                      <li class="mb-3">If a user adds multiple lines, the browser reduces them to a single line.</li>
+                      <li class="">By default, the display of the Paragraph element is set to “block” which you can change using CSS. This means that if you add another paragraph to the webpage the next paragraph will be inserted in the next line on the webpage.</li>
+                    </ul>
+                  </div>
+                  <div class="paragraph-example ms-5 py-3 ps-4 bg-black rounded col-7 ">
+                    <code class="">
+                      &#60;!DOCTYPE html&#62; <br>
+                      &#60;html&#62; <br>
+                      &nbsp;&nbsp; &#60;body&#62; <br>
+                      &nbsp;&nbsp; &nbsp;&nbsp; &#60;p&#62; <p class="text-light d-inline"> This is the first paragraph. </p> &#60;/p&#62; <br>
+                      &nbsp;&nbsp; &nbsp;&nbsp; &#60;p&#62; <p class="text-light d-inline"> This is the second paragraph. </p>&#60;/p&#62; <br>
+                      &nbsp;&nbsp; &#60;/body&#62; <br>
+                      &#60;/html&#62; <br>
+                    </code>
+                  </div>
+                </div>
+
+                <hr>
+
+                <div class="row text-formatting-tag">
+                  <h1 class="fw-bold">Text formatting elements</h1>
+                  <p>HTML provides many predefined elements that are used to change the formatting of text. The formatting can be used to set the text styles (like – bold, italic, or emphasized, etc.), highlight the text, make text superscript and subscript, etc.</p>
+                  <div class="text-formatting-elements ms-2">
+                    <h4>Text formatting elements:</h4>
+                    <p><strong class="text-main fs-5">&#60;strong&#62;</strong> and <b class="text-main fs-5">&#60;b&#62;</b> Tags: Both tags are used to make text bold. The text content of the tag is shown as important information on the webpage.</p>
+                    <div class="text-formatting-elements-example-b-strong ms-2 py-3 ps-4 bg-black rounded col-7 ">
+                      <code class="">
+                        &#60;!DOCTYPE html&#62; <br>
+                        &#60;html&#62; <br>
+                        &nbsp;&nbsp; &#60;body&#62; <br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &#60;p&#62; <p class="text-light d-inline"> Normal text </p> &#60;/p&#62; <br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &#60;p&#62;&#60;b&#62; <p class="text-light d-inline"> Bold text </p>&#60;/b&#62;&#60;/p&#62;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &#60;p&#62;&#60;strong&#62; <p class="text-light d-inline"> strong text </p>&#60;/strong&#62;&#60;/p&#62;<br>
+                        &nbsp;&nbsp; &#60;/body&#62; <br>
+                        &#60;/html&#62; <br>
+                      </code>
+                    </div>
+                    <br>
+                    <p><i class="text-main fs-5">&#60;i&#62;</i> and <em class="text-main fs-5">&#60;em&#62;</em> Tags: Both tags are used to make the text italic and emphasized. Both the element has opening and closing tags.</p>
+                    <div class="text-formatting-elements-example-b-strong ms-2 py-3 ps-4 bg-black rounded col-7 ">
+                      <code class="">
+                        &#60;!DOCTYPE html&#62; <br>
+                        &#60;html&#62; <br>
+                        &nbsp;&nbsp; &#60;body&#62; <br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &#60;p&#62; <p class="text-light d-inline"> Normal text </p> &#60;/p&#62; <br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &#60;p&#62;&#60;i&#62; <p class="text-light d-inline"> Italic text </p>&#60;/i&#62;&#60;/p&#62;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &#60;p&#62;&#60;em&#62; <p class="text-light d-inline"> Emphasized text </p>&#60;/em&#62;&#60;/p&#62;<br>
+                        &nbsp;&nbsp; &#60;/body&#62; <br>
+                        &#60;/html&#62; <br>
+                      </code>
+                    </div>
+                    <br>
+                    <p><small class="text-main">&#60;small&#62;</small> Tag: This tag is used to set a small font-size.</p>
+                    <div class="text-formatting-elements-example-b-strong ms-2 py-3 ps-4 bg-black rounded col-7 ">
+                      <code class="">
+                        &#60;!DOCTYPE html&#62; <br>
+                        &#60;html&#62; <br>
+                        &nbsp;&nbsp; &#60;body&#62; <br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &#60;p&#62; <p class="text-light d-inline"> Normal text </p> &#60;/p&#62; <br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &#60;p&#62;&#60;small&#62; <p class="text-light d-inline"> smaller text </p>&#60;/small&#62;&#60;/p&#62;<br>
+                        &nbsp;&nbsp; &#60;/body&#62; <br>
+                        &#60;/html&#62; <br>
+                      </code>
+                    </div>
+                    <br>
+                    <p><sub class="text-main fs-5">&#60;sub&#62;</sub> and <sup class="text-main fs-5">&#60;sup&#62;</sup> Tags: The &#60;sup&#62; tag is used to superscript a text whereas the &#60;sub&#62; tag is used to subscript a text.</p>
+                    <div class="text-formatting-elements-example-b-strong ms-2 py-3 ps-4 bg-black rounded col-7 ">
+                      <code class="">
+                        &#60;!DOCTYPE html&#62; <br>
+                        &#60;html&#62; <br>
+                        &nbsp;&nbsp; &#60;body&#62; <br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &#60;p&#62; <p class="text-light d-inline"> Normal text </p> &#60;/p&#62; <br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &#60;p&#62;&#60;sub&#62; <p class="text-light d-inline"> subscript  </p>&#60;/sub&#62; text &#60;/p&#62;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &#60;p&#62;&#60;sup&#62; <p class="text-light d-inline"> superscript   </p>&#60;/sup&#62; text &#60;/p&#62;<br>
+                        &nbsp;&nbsp; &#60;/body&#62; <br>
+                        &#60;/html&#62; <br>
+                      </code>
+                    </div>
+                    <br>
+                    <p><ins class="text-main fs-5">&#60;ins&#62;</ins> and <del class="text-main fs-5">&#60;del&#62;</del> Tags: The &#60;ins&#62; tag is used to underline a text marking the part as inserted or added. It also has an opening and a closing tag. This tag is mainly used in text in place of deleted text whereas the &#60;del&#62; tag is used to delete the text it adds a strike line to the text.</p>
+                    <div class="text-formatting-elements-example-b-strong ms-2 py-3 ps-4 bg-black rounded col-7 ">
+                      <code class="">
+                        &#60;!DOCTYPE html&#62; <br>
+                        &#60;html&#62; <br>
+                        &nbsp;&nbsp; &#60;body&#62; <br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &#60;p&#62; <p class="text-light d-inline"> Normal text </p> &#60;/p&#62; <br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &#60;p&#62;&#60;ins&#62; <p class="text-light d-inline"> underlined text</p>&#60;/ins&#62;&#60;/p&#62;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &#60;p&#62;&#60;del&#62; <p class="text-light d-inline"> deleted text</p>&#60;/del&#62;&#60;/p&#62;<br>
+                        &nbsp;&nbsp; &#60;/body&#62; <br>
+                        &#60;/html&#62; <br>
+                      </code>
+                    </div>
+                    <br>
+                    <p><mark class="text-main">&#60;mark&#62;</mark> Tag: The &#60;mark&#62; tag is used to highlighting a text. It has an opening and closing tag.</p>
+                    <div class="text-formatting-elements-example-b-strong ms-2 py-3 ps-4 bg-black rounded col-7 ">
+                      <code class="">
+                        &#60;!DOCTYPE html&#62; <br>
+                        &#60;html&#62; <br>
+                        &nbsp;&nbsp; &#60;body&#62; <br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &#60;p&#62; <p class="text-light d-inline"> Normal text </p> &#60;/p&#62; <br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &#60;p&#62;&#60;mark&#62; <p class="text-light d-inline"> Highlighted text </p>&#60;/mark&#62;&#60;/p&#62;<br>
+                        &nbsp;&nbsp; &#60;/body&#62; <br>
+                        &#60;/html&#62; <br>
+                      </code>
+                    </div>
+
+                  </div>
+                </div>
+
+                <hr>
+
+                <div class="row hr-tag">
+                  <h1 class="fw-bold">hr tag</h1>
+                  <p>HTML <strong>&#60;hr&#62;</strong> tag is a simple yet essential element used to insert a horizontal rule or a thematic break in an HTML page. It serves to divide or separate different sections of a document. <strong>&#60;hr&#62;</strong> tag in HTML stands for horizontal rule. The <strong>&#60;hr&#62;</strong> tag is an empty tag, and it does not require an end tag. The primary purpose of the <strong>&#60;hr&#62;</strong> tag is to create a visual separation between content sections within an HTML page.</p>
+                  <div class="hr-attr">
+                    <table class="table">
+                      <thead class="table-dark">
+                        <tr>
+                          <th>Attribute Values</th>
+                          <th>Value</th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="my-4">
+                          <th><p class="col-9 my-3 text-main">align</p></th>
+                          <td><p class="my-3">left / center / right</p></td>
+                          <td><p class="col-9 my-3">Used to specify the alignment of the horizontal rule.</p></td>
+                        </tr>
+                        <tr class="my-4">
+                          <th><p class="col-9 my-3 text-main">noshade</p></th>
+                          <td><p class="col-9 my-3">noshade</p></td>
+                          <td><p class="col-9 my-3">Used to specify the bar without shading effect.</p></td>
+                        </tr>
+                        <tr class="my-4">
+                          <th><p class="col-9 my-3 text-main">size</p></th>
+                          <td><p class="col-9 my-3">pixels</p></td>
+                          <td><p class="col-9 my-3">Used to specify the height of the horizontal rule.</p></td>
+                        </tr>
+                        <tr class="my-4">
+                          <th><p class="col-9 my-3 text-main">width</p></th>
+                          <td><p class="col-9 my-3">pixels</p></td>
+                          <td><p class="col-9 my-3">Used to specify the width of the horizontal rule.</p></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <h4 class="ms-2">Example:</h4>
+                  <div class="hr-example ms-4 py-3 ps-4 bg-black rounded col-7 ">
+                    <code class="">
+                      &#60;!DOCTYPE html&#62; <br>
+                      &#60;html&#62; <br>
+                      &nbsp;&nbsp; &#60;body&#62; <br>
+                      &nbsp;&nbsp; &nbsp;&nbsp; &#60;p&#62;Text&#60;/p&#62;<br>
+                      &nbsp;&nbsp; &nbsp;&nbsp; &#60;hr&#62;<br>
+                      &nbsp;&nbsp; &nbsp;&nbsp; &#60;p&#62;Text&#60;/p&#62;<br>
+                      &nbsp;&nbsp; &#60;/body&#62; <br>
+                      &#60;/html&#62; <br>
+                    </code>
+                  </div>
+                </div>
+
+                <hr>
+
+                <div class="row br-tag">
+                  <h1 class="fw-bold">br tag</h1>
+                  <p>The browser does not recognize new lines and paragraph formatting in the text. If you want to start a new line, you need to insert a line break with the help of <strong>&#60;br&#62;</strong>.</p>
+                  <p>It’s a self-closing tag and doesn’t require any type of closing tag. It is used for addresses, poetry, or in situations where line breaks are needed.</p>
+                  <div class="br-example ms-4">
+                    <h4>Code Example:</h4>
+                    <div class="py-3 ps-4 bg-black rounded col-7 ">
+                      <code class="">
+                        &#60;!DOCTYPE html&#62; <br>
+                        &#60;html&#62; <br>
+                        &nbsp;&nbsp; &#60;body&#62; <br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &#60;p&#62;Text<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &#60;br&#62;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; Text&#60;/p&#62;<br>
+                        &nbsp;&nbsp; &#60;/body&#62; <br>
+                        &#60;/html&#62; <br>
+                      </code>
+                    </div>
+                    <h4 class="mt-3">output:</h4>
+                    <div class="d-flex justify-content-center align-items-center col-7 text-black flex-column pt-3 rounded" style="background-color: rgba(255, 255, 255, 0.479);">
+                      <p class="fw-bold">Text</p>
+                      <br>
+                      <p class="fw-bold">Text</p>
+                    </div>
+                  </div>
+                  <div class="br-attr mt-4">
+                    <table class="table">
+                      <thead class="table-dark">
+                        <tr>
+                          <th>Attribute Values</th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="my-4">
+                          <th><h5 class="col-9 my-3 text-main" style="font-family: Arial, Helvetica, sans-serif;">clear</h5></th>
+                          <td><p class="col-9 my-3">It indicates where to begin the next line after the break.</p></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <hr>
+
+                <div class="row image-tag">
+                  <h1 class="fw-bold">HTML images</h1>
+                  <p>Images can improve the design and the appearance of a web page.</p>
+                  <div class="add-image-way mt-3">
+                    <h4 class="fw-bold">There are 2 ways to insert the images into a webpage:</h4>
+                    <ul>
+                      <li>By providing a full path or address (URL) to access an internet file.</li>
+                      <li class="mt-3">By providing the file path relative to the location of the current web page file.</li>
+                    </ul>
+                  </div>
+                  <div class="image-syntax ms-2">
+                    <h4 class="fw-bold">Syntax:</h4>
+                    <div class="py-3 ps-4 bg-black rounded col-5 ms-2">
+                      <code class="">
+                        &#60;img src="url" alt="alternate_text"&#62;
+                      </code>
+                    </div>
+                    <div class="image-syntax-src mt-3">
+                      <h5 class="text-main d-inline">src: </h5>
+                      <p class="d-inline">It is used to specify the path to the image source.</p>
+                    </div>
+                    <div class="image-syntax-alt mt-3">
+                      <h5 class="text-main d-inline">alt: </h5>
+                      <p class="d-inline">It is used to specify an alternate text for the image. It is useful as it informs the user about what the image means and also due to any network issue if the image cannot be displayed then this alternate text will be displayed.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <hr>
+
+                <div class="row link-tag">
+                  <h1 class="fw-bold">HTML Link</h1>
+                  <p><strong>HTML Links</strong> are connections from one web resource to another. A link has two ends, An anchor and a direction. The link starts at the “source” anchor and points to the “destination” anchor, which may be any Web resource such as an image, a video clip, a sound bite, a program, an HTML document or an element within an HTML document.</p>
+                  <p>You will find many websites or social media platforms ( Like YouTube, and Instagram ) which link an image to a URL or a text to a URL etc. This means that by using the ‘a’ tag, you can link 1 element of the code to another element that may/may not be in your code. </p>
+                  <div class="link-syntax ms-4">
+                    <h4 class="fw-bold ms-2">syntax:</h4>
+                    <div class="py-3 ps-4 bg-black rounded col-5 ">
+                      <code class="">
+                        &#60;a href="url"&#62;Text&#60;/a&#62;
+                      </code>
+                    </div>
+                    <div class="link-syntax-href mt-3">
+                      <h5 class="text-main d-inline">href: </h5>
+                      <p class="d-inline">The href attribute is used to specify the destination address of the link used. "href" stands for Hypertext reference.</p>
+                    </div>
+                  </div>
+                  <div class="external-links mt-4">
+                    <h4 class="fw-bold">External link:</h4>
+                    <p>An <strong class="fs-5">external link</strong> is a type of hyperlink that directs users to a resource, such as a webpage, image, or document, located on a different website or domain.</p>
+                  </div>
+                  <div class="internal-links mt-4">
+                    <h4 class="fw-bold">Internal link:</h4>
+                    <p>An <strong class="fs-5">internal link</strong> is a type of hyperlink whose target or destination is a resource, such as an image or document, on the same website or domain.</p>
+                  </div>
+                  <div class="link-types mt-4">
+                    <h4 class="fw-bold">Link types and colors:</h4>
+                    <ul>
+                      <li>An <strong>unvisited link</strong> appears underlined and <strong>blue</strong> by default.</li>
+                      <li class="mt-2">A <strong>visited link</strong> appears underlined and <strong>purple</strong> by default.</li>
+                      <li class="mt-2">An <strong>active link</strong> appears underlined and <strong>red</strong> by default.</li>
+                    </ul>
+                  </div>
+                  <div class="image-link mt-4">
+                    <h4 class="fw-bold">Images as hyperlinks</h4>
+                    <p>An image can be used to create a link to a specified URL. When the viewer clicks on the link, it redirects them to another page.  The code is as:</p>
+                    <div class="py-3 ps-4 bg-black rounded col-7 ">
+                      <code class="">
+                        <a href=""></a>
+                        &#60;a href="url"&#62;<br>
+                        &nbsp;&nbsp; &#60;img src="_" alt="_&#62;<br>
+                        &#60;/a&#62;
+                      </code>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+<!--                                  TAB 2 END                                       -->
+
+<!--                                    TAB 3                                         -->
+
+
+              <div class="tab-pane fade mt-3" id="attribute-pane" role="tabpanel" aria-labelledby="attribute" tabindex="0">
+                <div class="row id-attr">
+                  <h1 class="fw-bold">HTML ID attribute</h1>
+                  <p><strong>HTML id attribute</strong> provides a unique identifier for an element within a document (An element can't have more than one id and one id can't be assigned to more than one element). In CSS, the id attribute is used using the # symbol followed by id. quotes are not mandatory in tag=” ” in all cases. But writing with quotes is a good practice.</p>
+                  <div class="id-syntax ms-2">
+                    <h4 class="fw-bold">Syntax:</h4>
+                    <div class="py-3 ps-4 bg-black rounded col-5 ms-2">
+                      <code class="">
+                        &#60;tag id="_"&#62;&#60;/tag&#62;
+                      </code>
+                    </div>
+                  </div>
+                </div>
+
+                <hr>
+
+                <div class="row class-attr mt-4">
+                  <h1 class="fw-bold">HTML class attribute</h1>
+                  <p>The <strong>class</strong> attribute specifies one or more classnames for an element.</p>
+                  <p>The class attribute is mostly used to point to a class in a style sheet. However, it can also be used by a JavaScript (via the HTML DOM) to make changes to HTML elements with a specified class.</p>
+                  <p><strong class="fs-5">Note: </strong> class unlike ids can be used on more than one element.</p>
+
+                  <div class="class-syntax ms-2">
+                    <h4 class="fw-bold">Syntax:</h4>
+                    <div class="py-3 ps-4 bg-black rounded col-5 ms-2">
+                      <code class="">
+                        &#60;tag class="_"&#62;&#60;/tag&#62;
+                      </code>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+<!--                                  TAB 3 END                                       -->
+
+<!--                                    TAB 4                                         -->
+
+
+              <div class="tab-pane fade mt-3" id="lists-pane" role="tabpanel" aria-labelledby="lists" tabindex="0">
+                <div class="row ordered-list">
+                  <h1 class="fw-bold">HTML ordered lists</h1>
+                  <p>The <strong>&#60;ol&#62;</strong> tag is for an ordered list, an ordered list can be numerical or alphabetical. Inside the <strong>&#60;ol&#62;</strong> tag you have to make a list <strong>&#60;li&#62;</strong> of items that will follow the order.</p>
+                  <div class="ordered-list-syntax ms-2">
+                    <h4 class="fw-bold">Syntax:</h4>
+                    <div class="py-3 ps-4 bg-black rounded col-5 ms-2">
+                      <code class="">
+                        &#60;ol&#62;<br>
+                        &nbsp;&nbsp; &#60;li&#62; Item 1 &#60;/li&#62;<br>
+                        &nbsp;&nbsp; &#60;li&#62; Item 2 &#60;/li&#62;<br>
+                        &nbsp;&nbsp; &#60;li&#62; Item 3 &#60;/li&#62;<br>
+                        &#60;/ol&#62;
+                      </code>
+                    </div>
+                  </div>
+                  <div class="ordered-list-attr">
+                    <h4 class="fw-bold">Accept attributes:</h4>
+                    <ul>
+                      <li class="mb-3"><strong class="text-main">HTML &#60;ol&#62; compact Attribute: </strong> It defines the list should be compacted (compact attribute is not supported HTML5. Use CSS instead.).</li>
+                      <li class="mb-3"><strong class="text-main">HTML &#60;ol&#62; reversed Attribute: </strong> It defines that the order will be descending.</li>
+                      <li class="mb-3"><strong class="text-main">HTML &#60;ol&#62; start Attribute:</strong>It defines that from which number or alphabet the order will start.</li>
+                      <li><strong class="text-main">HTML &#60;ol&#62; type Attribute: </strong> It defines which type(1, A, a, I, and i) of an order you want in your list numeric, alphabetic, or roman numbers.</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <hr>
+                
+                <div class="row unordered-list">
+                  <h1 class="fw-bold">HTML unordered list</h1>
+                  <p> The &#60;ul&#62; tag in HTML is used to define the unordered list item in an HTML document. It contains the list items &#60;li&#62; element. The &#60;ul&#62; tag requires an opening and closing tag. By using CSS style you can easily design an unordered list.</p>
+                  <div class="ordered-list-syntax ms-2">
+                    <h4 class="fw-bold">Syntax:</h4>
+                    <div class="py-3 ps-4 bg-black rounded col-5 ms-2">
+                      <code class="">
+                        &#60;ul&#62;<br>
+                        &nbsp;&nbsp; &#60;li&#62; Item 1 &#60;/li&#62;<br>
+                        &nbsp;&nbsp; &#60;li&#62; Item 2 &#60;/li&#62;<br>
+                        &nbsp;&nbsp; &#60;li&#62; Item 3 &#60;/li&#62;<br>
+                        &#60;/ul&#62;
+                      </code>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+<!--                                  TAB 4 END                                       -->
+
+<!--                                    TAB 5                                         -->
+
+              <div class="tab-pane fade mt-3" id="tables-pane" role="tabpanel" aria-labelledby="tables" tabindex="0">
+                <div class="row tables">
+                  <h1 class="fw-bold">HTML tables</h1>
+                  <p>An <strong>HTML Table</strong> is an arrangement of data in <strong>rows</strong> and <strong>columns</strong> in tabular format. Tables are useful for various tasks, such as presenting text information and numerical data. A table is a useful tool for quickly and easily finding connections between different types of data. Tables are also used to create databases.</p>
+                  <div class="table-tags">
+                    <table class="table">
+                      <thead class="table-dark">
+                        <tr>
+                          <th>Tags</th>
+                          <th>Descriptions</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="my-4">
+                          <th><p class="col-9 my-3 text-main">&#60;table&#62;</p></th>
+                          <td><p class="my-3">Defines the structure for organizing data in rows and columns within a web page.</p></td>
+                        </tr>
+                        <tr class="my-4">
+                          <th><p class="col-9 my-3 text-main">&#60;tr&#62;</p></th>
+                          <td><p class="col-9 my-3">Represents a row within an HTML table, containing individual cells.</p></td>
+                        </tr>
+                        <tr class="my-4">
+                          <th><p class="col-9 my-3 text-main">&#60;th&#62;</p></th>
+                          <td><p class="col-9 my-3">Shows a table header cell that typically holds titles or headings.</p></td>
+                        </tr>
+                        <tr class="my-4">
+                          <th><p class="col-9 my-3 text-main">&#60;td&#62;</p></th>
+                          <td><p class="col-9 my-3">Represents a standard data cell, holding content or data.</p></td>
+                        </tr>
+                        <tr class="my-4">
+                          <th><p class="col-9 my-3 text-main">&#60;caption&#62;</p></th>
+                          <td><p class="col-9 my-3">Provides a title or description for the entire table.</p></td>
+                        </tr>
+                        <tr class="my-4">
+                          <th><p class="col-9 my-3 text-main">&#60;thead&#62;</p></th>
+                          <td><p class="col-9 my-3">	Defines the header section of a table, often containing column labels.</p></td>
+                        </tr>
+                        <tr class="my-4">
+                          <th><p class="col-9 my-3 text-main">&#60;tbody&#62;</p></th>
+                          <td><p class="col-9 my-3">Represents the main content area of a table, separating it from the header or footer.</p></td>
+                        </tr>
+                        <tr class="my-4">
+                          <th><p class="col-9 my-3 text-main">&#60;tfoot&#62;</p></th>
+                          <td><p class="col-9 my-3">Specifies the footer section of a table, typically holding summaries or totals.</p></td>
+                        </tr>
+                        <tr class="my-4">
+                          <th><p class="col-9 my-3 text-main">&#60;col&#62;</p></th>
+                          <td><p class="col-9 my-3">Defines attributes for table columns that can be applied to multiple columns at once.</p></td>
+                        </tr>
+                        <tr class="my-4">
+                          <th><p class="col-9 my-3 text-main">&#60;colgroup&#62;</p></th>
+                          <td><p class="col-9 my-3">	Groups together a set of columns in a table to which you can apply formatting or properties collectively.</p></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="table-syntax ms-2 mt-3">
+                    <h4 class="fw-bold mb-3">Syntax:</h4>
+                    <div class="py-3 ps-4 bg-black rounded col-9 ms-2">
+                      <code class="">
+                        &#60;table&#62;<br>
+                        &nbsp;&nbsp; &#60;thead&#62;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &#60;tr&#62;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &#60;td&#62; ... &#60;td&#62;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &#60;td&#62; ... &#60;td&#62;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &#60;td&#62; ... &#60;td&#62;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &#60;/tr&#62;<br>
+                        &nbsp;&nbsp; &#60;/thead&#62;<br>
+
+                        &nbsp;&nbsp; &#60;tbody&#62; <br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &#60;tr&#62;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &#60;td&#62; ... &#60;td&#62;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &#60;td&#62; ... &#60;td&#62;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &#60;td&#62; ... &#60;td&#62;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &#60;/tr&#62;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &#60;tr&#62;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &#60;td&#62; ... &#60;td&#62;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &#60;td&#62; ... &#60;td&#62;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &#60;td&#62; ... &#60;td&#62;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &#60;/tr&#62;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &#60;tr&#62;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &#60;td&#62; ... &#60;td&#62;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &#60;td&#62; ... &#60;td&#62;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &#60;td&#62; ... &#60;td&#62;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &#60;/tr&#62;<br>
+                        &nbsp;&nbsp; &#60;/tbody&#62;<br>
+
+                        &nbsp;&nbsp; &#60;tfoot&#62; <br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &#60;tr&#62;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &#60;td&#62; ... &#60;td&#62;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &#60;td&#62; ... &#60;td&#62;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &#60;td&#62; ... &#60;td&#62;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &#60;/tr&#62;<br>
+                        &nbsp;&nbsp; &#60;/tfoot&#62;<br>
+                        &#60;/table&#62;
+                      </code>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+<!--                                  TAB 5 END                                       -->
+
+<!--                                    TAB 6                                         -->
+
+
+              <div class="tab-pane fade mt-3" id="forms-pane" role="tabpanel" aria-labelledby="forms" tabindex="0">
+                <h1 class="fw-bold mb-5 forms">HTML Forms</h1>
+                <div class="row form-example mb-5 d-flex justify-content-between">
+                  <div class="col-5 form-example-left">
+                    <h2>Form Example:</h2>
+                    <form action="" class="ps-4 border py-4">
+                      <label for="fname">First name:</label><br>
+                      <input type="text" id="fname" name="fname" disabled readonly input><br>
+                      <label class="mt-3" for="lname">Last name:</label><br>
+                      <input type="text" id="lname" name="lname" Disabled readonly input><br><br>
+                      <input type="submit" value="Submit" class="btn btn-secondary" disabled>
+                    </form>
+                  </div>
+                  <div class="col-7 mt-2">
+                    <h2>Example code:</h2>
+                    <div class="bg-black rounded ps-3 py-4">  
+                      <code>
+                        &#60;form action="..."&#62; <br>
+                        &nbsp;&nbsp;&#60;label for="fname"&#62; First name: &#60;/label&#62;<br>
+                        &nbsp;&nbsp;&#60;input type="text" id="fname" name="fname"&#62;<br>
+                        &nbsp;&nbsp;&#60;label for"lname"&#62; Last name: &#60;/label&#62;<br>
+                        &nbsp;&nbsp;&#60;input type="text" id="lname" name="lname"&#62;<br>
+                        &nbsp;&nbsp;&#60;button type="submit"&#62; Submit &#60;/button&#62;<br>
+                        &#60;/form&#62;
+                      </code>
+                    </div>
+                  </div>
+                </div>
+                <hr>
+                <div class="row input-tag">
+                  <h2 class="fw-bold">HTML input tag</h2>
+                  <p>The <strong>HTML input Tag</strong> is the place where a user can enter data. The input tag is used within <strong>&#60;form&#62;</strong> element to declare input controls that allow users to input data. The default value accepted by the <strong>&#60;input&#62;</strong> Tag is <strong>text</strong>.</p>
+                  <p>An input field can be of various types depending upon the attribute type. The Input tag is an empty element that only contains attributes. For defining labels for the input element, <strong>&#60;label&#62;</strong> can be used.</p>
+                  <div class="input-tag-syntax ms-2">
+                    <h4 class="fw-bold">Syntax:</h4>
+                    <div class="py-3 ps-4 bg-black rounded col-5 ms-2">
+                      <code class="">
+                        &#60;input type = "value" .../&#62;
+                      </code>
+                    </div>
+                  </div>
+                </div>
+                <hr>
+                <div class="row form-tag">
+                  <h2 class="fw-bold">HTML Form tag</h2>
+                  <p>The HTML &#60;form&#62; tag creates input areas for user data, users can interact with the form, feedback collection, and data submission to the database as well as servers. Integrating forms in your content enhances user engagement, boosts interactivity, and the site more attractive.</p>
+                  <div class="form-syntax ms-2">
+                    <h4 class="fw-bold">Syntax:</h4>
+                    <div class="py-3 ps-4 bg-black rounded col-5 ms-2">
+                      <code class="">
+                        &#60;form&#62;<br>
+                        . <br>
+                        . <br>
+                        &nbsp;&nbsp;form elements <br>
+                        . <br>
+                        . <br>
+                        &#60;/form&#62;
+                      </code>
+                    </div>
+                  </div>
+                  <div class="form-supported-elements mt-4">
+                    <h3 class="fw-bold">Form supported elements:</h3>
+                    <ul class="ms-3">
+                      <li class="mb-3 text-main fs-5">&#60;input&#62;</li>
+                      <li class="mb-3 text-main fs-5">&#60;select&#62;</li>
+                      <li class="mb-3 text-main fs-5">&#60;label&#62;</li>
+                      <li class="mb-3 text-main fs-5">&#60;textarea&#62;</li>
+                      <li class="mb-3 text-main fs-5">&#60;button&#62;</li>
+                      <li class="mb-3 text-main fs-5">&#60;fieldset&#62;</li>
+                      <li class="text-main fs-5">&#60;legend&#62;</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+<!--                                  TAB 6 END                                       -->
+
+
+            </div>
+          </div>
+          
+        </div> 
+
+        <div class="col-12 col-lg-4">
+          <div class="position-sticky" style="top: 2rem; height: 100vh;">
+            <div class="swiper mySwiper mb-3 bg-secondary text-black p-3 rounded"  style="height: 35%;">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide" style="height: auto;">
+                  <h2>HTML <a href="https://en.wikipedia.org/wiki/HTML" class="link-dark fs-3" target="_blank">(Wikipedia)</a></h2>
+                  <p>HyperText Markup Language or HTML is the standard markup language for documents designed to be displayed in a web browser. It defines the content and structure of web content. It is often assisted by technologies such as Cascading Style Sheets (CSS) and scripting languages such as JavaScript.</p>
+                  <p>Web browsers receive HTML documents from a web server or from local storage and render the documents into multimedia web pages. HTML describes the structure of a web page semantically and originally included cues for its appearance.</p>
+                </div>
+              </div>
+              <div class="swiper-scrollbar"></div>
+            </div>
+            <div>
+              <h3 class="fw-bold fst-italic">Resent posts</h3>
+              <hr class="mt-0">
+            </div>
+
+            <div class="swiper mySwiper"  style="height: 40%;">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide" style="height: auto;">
+                  <div class="row">
+                    <div class="col-4">
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRG1jRnsyowJnmlKK9fx_6-OwIwZxNx-yllhw&usqp=CAU" alt="">
+                    </div>
+                    <div class="col-8 d-flex justify-content-center flex-column">
+                      <h6 class="fw-bold m-0">Example blog post title</h6>
+                      <p class="text-secondary m-0"><small>January 15, 2024</small></p>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-4">
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTE5fPhctwNLodS9VmAniEw_UiLWHgKs0fs1w&usqp=CAU" alt="">
+                    </div>
+                    <div class="col-8 d-flex justify-content-center flex-column">
+                      <h6 class="fw-bold m-0">Example blog post title</h6>
+                      <p class="text-secondary m-0"><small>January 15, 2024</small></p>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-4">
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSnfBD8oiQixFsc59ccAI4fSbIBvvTjUEZuw&usqp=CAU" alt="">
+                    </div>
+                    <div class="col-8 d-flex justify-content-center flex-column">
+                      <h6 class="fw-bold m-0">Example blog post title</h6>
+                      <p class="text-secondary m-0"><small>January 15, 2024</small></p>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-4">
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiB8giTN9Hj8QAEz4DVdCtqWbfnrKoZSo2nA&usqp=CAU" alt="">
+                    </div>
+                    <div class="col-8 d-flex justify-content-center flex-column">
+                      <h6 class="fw-bold m-0">Example blog post title</h6>
+                      <p class="text-secondary m-0"><small>January 15, 2024</small></p>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-4">
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROFDOwiRMOKqkXD-MALCy5rHvEcfYKZ3U6s52pJjtZSVrqO1Fpu61YywgWp1BTh3Gk8mQ&usqp=CAU" alt="">
+                    </div>
+                    <div class="col-8 d-flex justify-content-center flex-column">
+                      <h6 class="fw-bold m-0">Example blog post title</h6>
+                      <p class="text-secondary m-0"><small>January 15, 2024</small></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-scrollbar"></div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+    </main>
+
+    <div class="container footer-container mt-5 ">
+      <div id="footer-separator" class="separate-footer-main"></div>
+      <footer id="footer" class="footer d-flex align-items-center justify-content-center flex-column" style="height: 40vh;">
+        <h1 class="fw-bold">Logo</h1>
+        <div class="footer-links col-6 d-flex flex-row justify-content-between mt-4">
+          <a class="text-decoration-none" href="#" target="_blank"><p class="text-light">About us</p></a>
+          <p>|</p>
+          <a class="text-decoration-none" href="#" target="_blank"><p class="text-light">portfolio</p></a>
+          <p>|</p>
+          <a class="text-decoration-none" href="#" target="_blank"><p class="text-light">Services</p></a>
+          <p>|</p>
+          <a class="text-decoration-none" href="#" target="_blank"><p class="text-light">Contact us</p></a>
+        </div>
+        <div class="footer-social-media col-4 d-flex flex-row justify-content-between align-items-center h-25 mt-3">
+          <a href="#" target="_blank" rel="noopener noreferrer" style="height: 100%; width: 100%;"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="60%" height="60%" viewBox="0,0,256,256">
+            <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M25,3c-12.13844,0 -22,9.86156 -22,22c0,11.01913 8.12753,20.13835 18.71289,21.72852l1.14844,0.17383v-17.33594h-5.19727v-3.51953h5.19727v-4.67383c0,-2.87808 0.69065,-4.77363 1.83398,-5.96289c1.14334,-1.18926 2.83269,-1.78906 5.18359,-1.78906c1.87981,0 2.61112,0.1139 3.30664,0.19922v2.88086h-2.44727c-1.38858,0 -2.52783,0.77473 -3.11914,1.80664c-0.59131,1.03191 -0.77539,2.264 -0.77539,3.51953v4.01758h6.12305l-0.54492,3.51953h-5.57812v17.36523l1.13477,-0.1543c10.73582,-1.45602 19.02148,-10.64855 19.02148,-21.77539c0,-12.13844 -9.86156,-22 -22,-22zM25,5c11.05756,0 20,8.94244 20,20c0,9.72979 -6.9642,17.7318 -16.15625,19.5332v-12.96875h5.29297l1.16211,-7.51953h-6.45508v-2.01758c0,-1.03747 0.18982,-1.96705 0.50977,-2.52539c0.31994,-0.55834 0.62835,-0.80078 1.38477,-0.80078h4.44727v-6.69141l-0.86719,-0.11719c-0.59979,-0.08116 -1.96916,-0.27148 -4.43945,-0.27148c-2.7031,0 -5.02334,0.73635 -6.625,2.40234c-1.60166,1.66599 -2.39258,4.14669 -2.39258,7.34961v2.67383h-5.19727v7.51953h5.19727v12.9043c-9.04433,-1.91589 -15.86133,-9.84626 -15.86133,-19.4707c0,-11.05756 8.94244,-20 20,-20z"></path></g></g>
+          </svg></a>
+          <a href="#" target="_blank" rel="noopener noreferrer" style="height: 100%; width: 100%"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="60%" height="60%" viewBox="0,0,256,256">
+            <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M16,3c-7.16752,0 -13,5.83248 -13,13v18c0,7.16752 5.83248,13 13,13h18c7.16752,0 13,-5.83248 13,-13v-18c0,-7.16752 -5.83248,-13 -13,-13zM16,5h18c6.08648,0 11,4.91352 11,11v18c0,6.08648 -4.91352,11 -11,11h-18c-6.08648,0 -11,-4.91352 -11,-11v-18c0,-6.08648 4.91352,-11 11,-11zM37,11c-1.10457,0 -2,0.89543 -2,2c0,1.10457 0.89543,2 2,2c1.10457,0 2,-0.89543 2,-2c0,-1.10457 -0.89543,-2 -2,-2zM25,14c-6.06329,0 -11,4.93671 -11,11c0,6.06329 4.93671,11 11,11c6.06329,0 11,-4.93671 11,-11c0,-6.06329 -4.93671,-11 -11,-11zM25,16c4.98241,0 9,4.01759 9,9c0,4.98241 -4.01759,9 -9,9c-4.98241,0 -9,-4.01759 -9,-9c0,-4.98241 4.01759,-9 9,-9z"></path></g></g>
+          </svg></a>
+          <a href="#" target="_blank" rel="noopener noreferrer" style="height: 100%; width: 100%"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="60%" height="60%" viewBox="0,0,256,256">
+            <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M34.21875,5.46875c-5.98047,0 -10.84375,4.86328 -10.84375,10.84375c0,0.35938 0.08984,0.71094 0.125,1.0625c-7.39453,-0.70703 -13.93359,-4.26953 -18.375,-9.71875c-0.20703,-0.26172 -0.52734,-0.40234 -0.86328,-0.37891c-0.33203,0.02344 -0.62891,0.21484 -0.79297,0.50391c-0.93359,1.60547 -1.46875,3.45313 -1.46875,5.4375c0,2.40234 0.85938,4.60156 2.1875,6.40625c-0.25781,-0.11328 -0.53906,-0.17578 -0.78125,-0.3125c-0.30859,-0.16406 -0.67969,-0.15625 -0.98047,0.02344c-0.30078,0.17969 -0.48438,0.50391 -0.48828,0.85156v0.125c0,3.68359 1.90625,6.88281 4.71875,8.84375c-0.03125,-0.00391 -0.0625,0.00781 -0.09375,0c-0.34375,-0.05859 -0.69141,0.0625 -0.92187,0.32422c-0.23047,0.26172 -0.30469,0.625 -0.20312,0.95703c1.11719,3.47266 3.96875,6.125 7.5,7.09375c-2.8125,1.67188 -6.07422,2.65625 -9.59375,2.65625c-0.76172,0 -1.49219,-0.03906 -2.21875,-0.125c-0.46875,-0.0625 -0.91797,0.21094 -1.07422,0.65625c-0.16016,0.44531 0.01563,0.94141 0.41797,1.1875c4.51172,2.89453 9.86719,4.59375 15.625,4.59375c9.33203,0 16.65234,-3.89844 21.5625,-9.46875c4.91016,-5.57031 7.46875,-12.80469 7.46875,-19.5625c0,-0.28516 -0.02344,-0.5625 -0.03125,-0.84375c1.83203,-1.40234 3.46875,-3.04687 4.75,-4.96875c0.25391,-0.37109 0.22656,-0.86719 -0.06641,-1.21094c-0.28906,-0.34375 -0.77734,-0.44922 -1.18359,-0.25781c-0.51562,0.23047 -1.11719,0.25391 -1.65625,0.4375c0.71094,-0.94922 1.32031,-1.97266 1.6875,-3.125c0.125,-0.39453 -0.01172,-0.82812 -0.33594,-1.08594c-0.32422,-0.25391 -0.77734,-0.28516 -1.13281,-0.07031c-1.70703,1.01172 -3.59766,1.72266 -5.59375,2.15625c-1.9375,-1.8125 -4.48828,-3.03125 -7.34375,-3.03125zM34.21875,7.46875c2.55078,0 4.85547,1.08984 6.46875,2.8125c0.24219,0.25 0.59766,0.35547 0.9375,0.28125c1.30469,-0.25781 2.54297,-0.63672 3.75,-1.125c-0.69531,0.9375 -1.55469,1.73828 -2.5625,2.34375c-0.45703,0.22266 -0.67187,0.75 -0.50391,1.23047c0.16406,0.47656 0.66406,0.75391 1.16016,0.64453c1,-0.12109 1.89063,-0.52734 2.84375,-0.78125c-0.85547,0.92578 -1.79297,1.76172 -2.8125,2.5c-0.27734,0.20313 -0.42969,0.53125 -0.40625,0.875c0.01563,0.40625 0.03125,0.80859 0.03125,1.21875c0,6.25 -2.39844,13.03516 -6.96875,18.21875c-4.57031,5.18359 -11.28125,8.8125 -20.0625,8.8125c-3.98828,0 -7.75391,-0.88281 -11.15625,-2.4375c4.21875,-0.32422 8.10938,-1.81641 11.25,-4.28125c0.32813,-0.26172 0.45703,-0.69922 0.32422,-1.09766c-0.13281,-0.39844 -0.5,-0.67187 -0.91797,-0.68359c-3.29687,-0.05859 -6.05859,-1.97656 -7.53125,-4.6875c0.05469,0 0.10156,0 0.15625,0c0.98828,0 1.96484,-0.125 2.875,-0.375c0.4375,-0.12891 0.73828,-0.53516 0.72266,-0.99219c-0.01562,-0.45703 -0.33984,-0.84766 -0.78516,-0.94531c-3.55859,-0.71875 -6.22656,-3.61719 -6.84375,-7.21875c1.00781,0.34766 2.03906,0.62109 3.15625,0.65625c0.45703,0.02734 0.87109,-0.25781 1.01172,-0.69141c0.14063,-0.43359 -0.03125,-0.91016 -0.41797,-1.15234c-2.375,-1.58984 -3.9375,-4.29687 -3.9375,-7.375c0,-1.14062 0.29688,-2.1875 0.6875,-3.1875c5,5.48828 12,9.13281 19.90625,9.53125c0.3125,0.01563 0.61719,-0.11328 0.82031,-0.35156c0.20313,-0.24219 0.28125,-0.5625 0.21094,-0.86719c-0.15234,-0.64844 -0.25,-1.33594 -0.25,-2.03125c0,-4.89844 3.94531,-8.84375 8.84375,-8.84375z"></path></g></g>
+          </svg></a>
+          <a href="#" target="_blank" rel="noopener noreferrer" style="height: 100%; width: 100%"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="60%" height="60%" viewBox="0,0,256,256">
+            <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M24.40234,9c-6.60156,0 -12.80078,0.5 -16.10156,1.19922c-2.19922,0.5 -4.10156,2 -4.5,4.30078c-0.39844,2.39844 -0.80078,6 -0.80078,10.5c0,4.5 0.39844,8 0.89844,10.5c0.40234,2.19922 2.30078,3.80078 4.5,4.30078c3.50391,0.69922 9.5,1.19922 16.10156,1.19922c6.60156,0 12.59766,-0.5 16.09766,-1.19922c2.20313,-0.5 4.10156,-2 4.5,-4.30078c0.40234,-2.5 0.90234,-6.09766 1,-10.59766c0,-4.5 -0.5,-8.10156 -1,-10.60156c-0.39844,-2.19922 -2.29687,-3.80078 -4.5,-4.30078c-3.5,-0.5 -9.59766,-1 -16.19531,-1zM24.40234,11c7.19922,0 12.99609,0.59766 15.79688,1.09766c1.5,0.40234 2.69922,1.40234 2.89844,2.70313c0.60156,3.19922 1,6.60156 1,10.10156c-0.09766,4.29688 -0.59766,7.79688 -1,10.29688c-0.29687,1.89844 -2.29687,2.5 -2.89844,2.70313c-3.60156,0.69922 -9.60156,1.19531 -15.60156,1.19531c-6,0 -12.09766,-0.39844 -15.59766,-1.19531c-1.5,-0.40234 -2.69922,-1.40234 -2.89844,-2.70312c-0.80078,-2.80078 -1.10156,-6.5 -1.10156,-10.19922c0,-4.60156 0.40234,-8 0.80078,-10.09766c0.30078,-1.90234 2.39844,-2.50391 2.89844,-2.70312c3.30078,-0.69922 9.40234,-1.19922 15.70313,-1.19922zM19,17v16l14,-8zM21,20.40234l8,4.59766l-8,4.59766z"></path></g></g>
+          </svg></a>
+        </div>
+      </footer>
+    </div>
+    
+    <script src="script/light-dark mode.js"></script>
+    <script src="script/login.js"></script>
+    <script src="script/main.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        direction: "vertical",
+        slidesPerView: "auto",
+        freeMode: true,
+        scrollbar: {
+          el: ".swiper-scrollbar",
+        },
+        mousewheel: true,
+      });
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

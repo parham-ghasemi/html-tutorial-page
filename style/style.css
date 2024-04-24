@@ -1,0 +1,220 @@
+:root {
+  --cl-black: rgba(0, 0, 0, 0.4);
+  --cl-white: rgba(255, 255, 255, 0.479);
+  --cl-green: rgb(0, 185, 31);
+  --cl-orange: rgb(219, 117, 0);
+  --cl-lime: rgb(0, 201, 60);
+  --cl-purple: #a172ff;
+  --bs-highlight-bg: rgb(80, 0, 155);
+  --cl-search: #111;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Anta", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+img {
+  height: 100%;
+  width: 100%;
+}
+.card {
+  cursor: pointer;
+}
+
+.search-content {
+  position: relative;
+  display: flex;
+  justify-content: end;
+  padding-left: 2%;
+  transition: all 800ms;
+  width: 45px;
+  height: 45px;
+  border-radius: 25px;
+  background-color: var(--cl-search) !important;
+}
+.search-button {
+  background-color: var(--cl-search);
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  height: 45px;
+  width: 45px;
+  border-radius: 25px;
+  z-index: 100;
+}
+.search-icon {
+  color: var(--cl-lime);
+  transform: all 800ms;
+}
+.search-bar-input {
+  z-index: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
+  border: none;
+  padding-left: 5%;
+  display: none;
+  background-color: var(--cl-search) !important;
+}
+.search-content:hover {
+  width: 100%;
+}
+.search-content:hover .search-bar-input {
+  display: block;
+}
+
+
+.header-card {
+  height: 350px;
+}
+
+#login-signup-container {
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(20px);
+}
+
+
+.instructions {
+  margin-left: 15%;
+}
+
+.login-signup {
+  width: 40%;
+}
+
+a:not(.nav-link) {
+  color: var(--cl-green);
+}
+
+code {
+  color: var(--cl-orange);
+}
+
+.bg-black {
+  background-color: var(--cl-black) !important;
+}
+
+.footer {
+  background-color: #1c0029;
+}
+.footer-light {
+  background-color: var(--cl-purple);
+  z-index: 0;
+  g {
+    fill: #111;
+  }
+}
+
+.separate-footer-main-light {
+  box-shadow: inset 0px -20px 5px -11px var(--cl-purple);
+  background-color: rgb(255, 255, 255);
+  height: 4vh;
+}
+
+.separate-footer-main {
+  background-color: black;
+  height: 3vh;
+  box-shadow: inset 0px -20px 15px -11px #1c0029;
+  /* box-shadow: inset 0px -20px 5px -11px var(--cl-purple); */
+  z-index: 5;
+}
+
+.text-main {
+  color: var(--cl-lime);
+}
+
+.text-purple {
+  color: var(--cl-purple);
+}
+
+.dark-btn {
+  height: 35px;
+  width: 35px;
+  padding: 5px;
+  position: relative;
+  background-color: var(--cl-white);
+  border-radius: 50%;
+  transition: 1000ms;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.light-btn {
+  height: 35px;
+  width: 35px;
+  padding: 5px;
+  position: relative;
+  background-color: #999;
+  border-radius: 50%;
+  transition: 1000ms;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dark-mode-icon {
+  position:absolute;
+  opacity: 0;
+  /* transform: rotate(180deg); */
+  transition: ease-in-out 1000ms;
+}
+
+.light-mode-icon {
+  position: absolute;
+  opacity: 0;
+  transition: ease-in-out 1000ms;
+}
+
+/* .dark-btn > .dark-mode-icon{
+} */
+
+.dark-btn > .light-mode-icon{
+  transform: rotate(180deg);
+  opacity: 1;
+}
+
+.light-btn > .dark-mode-icon{
+  transform: rotate(-360deg);
+  opacity: 1;
+}
+
+/* .light-btn > .light-mode-icon{
+  position: absolute;
+} */
+
+
+
+@media (max-width: 768px) {
+  .header-card {
+    height: 250px;
+  }
+
+  .header-card p {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 576px) {
+  .header-card {
+    height: 200px;
+  }
+
+  .header-card p {
+    font-size: 1.6rem;
+  }
+}
