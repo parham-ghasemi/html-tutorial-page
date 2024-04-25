@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Bootstrap demo</title>
+    <title>Html tutorial</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -21,7 +21,7 @@
   </head>
   <body>
 
-    <div id="login-signup-container" class="container-fluid position-absolute d-none" style="height: 100vh; z-index: 200;">
+    <div id="login-signup-container" class="container-fluid position-absolute d-none" style="height: 100vh; z-index: 200; max-width: 100vw; overflow: hidden;">
         <div id="login-signup-container-inner" class="row login-signup h-75 bg-dark border border-1 border-light position-absolute top-50 start-50 translate-middle py-4 px-3 rounded" onclick="event.stopPropagation()">
           <h1 class="login-signup-header text-center text-main mb-4 mt-5">Login</h1>
           <form id="login-signup-form" action="" class="col-12 login-signup-form d-flex flex-column align-items-center justify-content-center">
@@ -307,7 +307,7 @@
                   <div class="row page-structure mt-3">
                     <h2 class="fw-bold">HTML page structure</h2>
                     <p>The basic structure of an HTML page is shown below. It contains the essential building-block elements (That is doctype declaration, HTML, head, title, and body elements) upon which all web pages are created.</p>
-                    <div class="ms-3 mb-3 py-2 bg-black rounded col-11">
+                    <div class="ms-0 ms-md--3 mb-3 py-2 bg-black rounded col-12">
                       <code class="">
                         &#60;!DOCTYPE html&#62;<br>
                         &#60;html lang="en"&#62;<br>
@@ -420,7 +420,7 @@
                   </div>
                   <div class="header-example-code mt-3 ms-2" >
                     <h4 class="fw-bold mb-3">Example code:</h4>
-                    <div class="ms-5 py-2 ps-4 bg-black rounded col-7 header-example-code">
+                    <div class="ms-2 ms-md-5 py-2 ps-4 bg-black rounded col-11 col-md-7 header-example-code">
                       <code>
                         &#60;!DOCTYPE html&#62; <br>
                         &#60;html&#62; <br>
@@ -456,7 +456,7 @@
                       <li class="">By default, the display of the Paragraph element is set to “block” which you can change using CSS. This means that if you add another paragraph to the webpage the next paragraph will be inserted in the next line on the webpage.</li>
                     </ul>
                   </div>
-                  <div class="paragraph-example ms-5 py-3 ps-4 bg-black rounded col-7 ">
+                  <div class="paragraph-example ms-2 ms-md-5  py-3 ps-4 bg-black rounded col-11 col-md-7 ">
                     <code class="">
                       &#60;!DOCTYPE html&#62; <br>
                       &#60;html&#62; <br>
@@ -477,7 +477,7 @@
                   <div class="text-formatting-elements ms-2">
                     <h4>Text formatting elements:</h4>
                     <p><strong class="text-main fs-5">&#60;strong&#62;</strong> and <b class="text-main fs-5">&#60;b&#62;</b> Tags: Both tags are used to make text bold. The text content of the tag is shown as important information on the webpage.</p>
-                    <div class="text-formatting-elements-example-b-strong ms-2 py-3 ps-4 bg-black rounded col-7 ">
+                    <div class="text-formatting-elements-example-b-strong ms-2 py-3 ps-4 bg-black rounded col-11 col-md-7 ">
                       <code class="">
                         &#60;!DOCTYPE html&#62; <br>
                         &#60;html&#62; <br>
@@ -491,7 +491,7 @@
                     </div>
                     <br>
                     <p><i class="text-main fs-5">&#60;i&#62;</i> and <em class="text-main fs-5">&#60;em&#62;</em> Tags: Both tags are used to make the text italic and emphasized. Both the element has opening and closing tags.</p>
-                    <div class="text-formatting-elements-example-b-strong ms-2 py-3 ps-4 bg-black rounded col-7 ">
+                    <div class="text-formatting-elements-example-b-strong ms-2 py-3 ps-4 bg-black rounded col-11 col-md-7 ">
                       <code class="">
                         &#60;!DOCTYPE html&#62; <br>
                         &#60;html&#62; <br>
@@ -505,7 +505,7 @@
                     </div>
                     <br>
                     <p><small class="text-main">&#60;small&#62;</small> Tag: This tag is used to set a small font-size.</p>
-                    <div class="text-formatting-elements-example-b-strong ms-2 py-3 ps-4 bg-black rounded col-7 ">
+                    <div class="text-formatting-elements-example-b-strong ms-2 py-3 ps-4 bg-black rounded col-11 col-md-7 ">
                       <code class="">
                         &#60;!DOCTYPE html&#62; <br>
                         &#60;html&#62; <br>
@@ -518,7 +518,7 @@
                     </div>
                     <br>
                     <p><sub class="text-main fs-5">&#60;sub&#62;</sub> and <sup class="text-main fs-5">&#60;sup&#62;</sup> Tags: The &#60;sup&#62; tag is used to superscript a text whereas the &#60;sub&#62; tag is used to subscript a text.</p>
-                    <div class="text-formatting-elements-example-b-strong ms-2 py-3 ps-4 bg-black rounded col-7 ">
+                    <div class="text-formatting-elements-example-b-strong ms-2 py-3 ps-4 bg-black rounded col-11 col-md-7 ">
                       <code class="">
                         &#60;!DOCTYPE html&#62; <br>
                         &#60;html&#62; <br>
@@ -532,7 +532,7 @@
                     </div>
                     <br>
                     <p><ins class="text-main fs-5">&#60;ins&#62;</ins> and <del class="text-main fs-5">&#60;del&#62;</del> Tags: The &#60;ins&#62; tag is used to underline a text marking the part as inserted or added. It also has an opening and a closing tag. This tag is mainly used in text in place of deleted text whereas the &#60;del&#62; tag is used to delete the text it adds a strike line to the text.</p>
-                    <div class="text-formatting-elements-example-b-strong ms-2 py-3 ps-4 bg-black rounded col-7 ">
+                    <div class="text-formatting-elements-example-b-strong ms-2 py-3 ps-4 bg-black rounded col-11 col-md-7 ">
                       <code class="">
                         &#60;!DOCTYPE html&#62; <br>
                         &#60;html&#62; <br>
@@ -546,7 +546,7 @@
                     </div>
                     <br>
                     <p><mark class="text-main">&#60;mark&#62;</mark> Tag: The &#60;mark&#62; tag is used to highlighting a text. It has an opening and closing tag.</p>
-                    <div class="text-formatting-elements-example-b-strong ms-2 py-3 ps-4 bg-black rounded col-7 ">
+                    <div class="text-formatting-elements-example-b-strong ms-2 py-3 ps-4 bg-black rounded col-11 col-md-7 ">
                       <code class="">
                         &#60;!DOCTYPE html&#62; <br>
                         &#60;html&#62; <br>
@@ -673,7 +673,7 @@
                   </div>
                   <div class="image-syntax ms-2">
                     <h4 class="fw-bold">Syntax:</h4>
-                    <div class="py-3 ps-4 bg-black rounded col-5 ms-2">
+                    <div class="py-3 ps-4 bg-black rounded col-11 col-md-5 ms-2">
                       <code class="">
                         &#60;img src="url" alt="alternate_text"&#62;
                       </code>
@@ -697,7 +697,7 @@
                   <p>You will find many websites or social media platforms ( Like YouTube, and Instagram ) which link an image to a URL or a text to a URL etc. This means that by using the ‘a’ tag, you can link 1 element of the code to another element that may/may not be in your code. </p>
                   <div class="link-syntax ms-4">
                     <h4 class="fw-bold ms-2">syntax:</h4>
-                    <div class="py-3 ps-4 bg-black rounded col-5 ">
+                    <div class="py-3 ps-4 bg-black rounded col-11 col-md-5 ">
                       <code class="">
                         &#60;a href="url"&#62;Text&#60;/a&#62;
                       </code>
@@ -749,7 +749,7 @@
                   <p><strong>HTML id attribute</strong> provides a unique identifier for an element within a document (An element can't have more than one id and one id can't be assigned to more than one element). In CSS, the id attribute is used using the # symbol followed by id. quotes are not mandatory in tag=” ” in all cases. But writing with quotes is a good practice.</p>
                   <div class="id-syntax ms-2">
                     <h4 class="fw-bold">Syntax:</h4>
-                    <div class="py-3 ps-4 bg-black rounded col-5 ms-2">
+                    <div class="py-3 ps-4 bg-black rounded col-md-5 col-7 ms-2">
                       <code class="">
                         &#60;tag id="_"&#62;&#60;/tag&#62;
                       </code>
@@ -767,7 +767,7 @@
 
                   <div class="class-syntax ms-2">
                     <h4 class="fw-bold">Syntax:</h4>
-                    <div class="py-3 ps-4 bg-black rounded col-5 ms-2">
+                    <div class="py-3 ps-4 bg-black rounded col-md-5 col-7 ms-2">
                       <code class="">
                         &#60;tag class="_"&#62;&#60;/tag&#62;
                       </code>
@@ -787,7 +787,7 @@
                   <p>The <strong>&#60;ol&#62;</strong> tag is for an ordered list, an ordered list can be numerical or alphabetical. Inside the <strong>&#60;ol&#62;</strong> tag you have to make a list <strong>&#60;li&#62;</strong> of items that will follow the order.</p>
                   <div class="ordered-list-syntax ms-2">
                     <h4 class="fw-bold">Syntax:</h4>
-                    <div class="py-3 ps-4 bg-black rounded col-5 ms-2">
+                    <div class="py-3 ps-4 bg-black rounded col-md-5 col-10 ms-2">
                       <code class="">
                         &#60;ol&#62;<br>
                         &nbsp;&nbsp; &#60;li&#62; Item 1 &#60;/li&#62;<br>
@@ -815,7 +815,7 @@
                   <p> The &#60;ul&#62; tag in HTML is used to define the unordered list item in an HTML document. It contains the list items &#60;li&#62; element. The &#60;ul&#62; tag requires an opening and closing tag. By using CSS style you can easily design an unordered list.</p>
                   <div class="ordered-list-syntax ms-2">
                     <h4 class="fw-bold">Syntax:</h4>
-                    <div class="py-3 ps-4 bg-black rounded col-5 ms-2">
+                    <div class="py-3 ps-4 bg-black rounded col-md-5 col-10 ms-2">
                       <code class="">
                         &#60;ul&#62;<br>
                         &nbsp;&nbsp; &#60;li&#62; Item 1 &#60;/li&#62;<br>
@@ -890,7 +890,7 @@
                   </div>
                   <div class="table-syntax ms-2 mt-3">
                     <h4 class="fw-bold mb-3">Syntax:</h4>
-                    <div class="py-3 ps-4 bg-black rounded col-9 ms-2">
+                    <div class="py-3 ps-4 bg-black rounded col-md-9 col-11 ms-2">
                       <code class="">
                         &#60;table&#62;<br>
                         &nbsp;&nbsp; &#60;thead&#62;<br>
@@ -941,8 +941,8 @@
 
               <div class="tab-pane fade mt-3" id="forms-pane" role="tabpanel" aria-labelledby="forms" tabindex="0">
                 <h1 class="fw-bold mb-5 forms">HTML Forms</h1>
-                <div class="row form-example mb-5 d-flex justify-content-between">
-                  <div class="col-5 form-example-left">
+                <div class="row form-example mb-5 d-block d-md-flex justify-content-between">
+                  <div class="col-10 col-md-5 form-example-left">
                     <h2>Form Example:</h2>
                     <form action="" class="ps-4 border py-4">
                       <label for="fname">First name:</label><br>
@@ -952,7 +952,7 @@
                       <input type="submit" value="Submit" class="btn btn-secondary" disabled>
                     </form>
                   </div>
-                  <div class="col-7 mt-2">
+                  <div class="col-12 col-md-7 mt-2">
                     <h2>Example code:</h2>
                     <div class="bg-black rounded ps-3 py-4">  
                       <code>
@@ -974,7 +974,7 @@
                   <p>An input field can be of various types depending upon the attribute type. The Input tag is an empty element that only contains attributes. For defining labels for the input element, <strong>&#60;label&#62;</strong> can be used.</p>
                   <div class="input-tag-syntax ms-2">
                     <h4 class="fw-bold">Syntax:</h4>
-                    <div class="py-3 ps-4 bg-black rounded col-5 ms-2">
+                    <div class="py-3 ps-4 bg-black rounded col-md-5 col-9 ms-2">
                       <code class="">
                         &#60;input type = "value" .../&#62;
                       </code>
@@ -987,7 +987,7 @@
                   <p>The HTML &#60;form&#62; tag creates input areas for user data, users can interact with the form, feedback collection, and data submission to the database as well as servers. Integrating forms in your content enhances user engagement, boosts interactivity, and the site more attractive.</p>
                   <div class="form-syntax ms-2">
                     <h4 class="fw-bold">Syntax:</h4>
-                    <div class="py-3 ps-4 bg-black rounded col-5 ms-2">
+                    <div class="py-3 ps-4 bg-black rounded col-md-5 col-7 ms-2">
                       <code class="">
                         &#60;form&#62;<br>
                         . <br>
@@ -1035,11 +1035,11 @@
               <div class="swiper-scrollbar"></div>
             </div>
             <div>
-              <h3 class="fw-bold fst-italic">Resent posts</h3>
+              <h3 class="fw-bold fst-italic">Recent posts</h3>
               <hr class="mt-0">
             </div>
 
-            <div class="swiper mySwiper"  style="height: 40%;">
+            <div class="swiper mySwiper border-bottom pb-2"  style="height: 40%;">
               <div class="swiper-wrapper">
                 <div class="swiper-slide" style="height: auto;">
                   <div class="row">
@@ -1099,7 +1099,7 @@
           </div>
         </div>
       </div>
-      <hr>
+      <hr class="d-none">
     </main>
 
     <div class="container-lg footer-container mt-5 ">
